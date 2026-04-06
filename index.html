@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شهد خالد - أساسيات الحاسب</title>
+    <!-- Google Fonts: Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">أ. شهد خالد</a>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#lessons">الشروحات</a></li>
+                    <li><a href="#courses">كورسات</a></li>
+                    <li><a href="#booking">حجز استشارات</a></li>
+                    <li><a href="#why-us">مميزاتنا</a></li>
+                </ul>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="theme-toggle" id="theme-toggle"
+                        style="cursor: pointer; font-size: 1.2rem; color: var(--text-color); transition: color var(--transition-speed);"
+                        title="تبديل الوضع">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </div>
+                    <div class="menu-toggle" id="mobile-menu">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <!-- Logo image -->
+            <img src="./cslogo.png" alt="شعار أ. شهد خالد" class="profile-img">
+            <h1>أ. شهد خالد</h1>
+            <p>شرح أساسيات الحاسب الآلي وتبسيط لغات البرمجة والتقنيات الحديثة</p>
+            <a href="https://www.youtube.com/channel/UCyUUeLxp4X_Fc7f0VzUDvdQ" target="_blank" class="btn">
+                <i class="fab fa-youtube"></i> زيارة القناة على يوتيوب
+            </a>
+        </div>
+    </section>
+
+    <!-- Lessons Section -->
+    <section id="lessons">
+        <div class="container">
+            <h2 class="section-title">الشروحات</h2>
+            <div id="react-lessons-root"></div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses-section">
+        <div class="container">
+            <h2 class="section-title">كورسات متاحة</h2>
+            <div class="grid-container">
+                <!-- Course 1 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">كورس أساسيات الحاسوب (IT)</h3>
+                        <p class="card-desc">كورس شامل يغطي كافة أساسيات الحاسب الآلي ونظام التشغيل وبرامج الأوفيس
+                            المكتبي.</p>
+                        <span class="price">السعر: 500 ج.م</span>
+                        <button class="btn" onclick="bookCourse('كورس أساسيات الحاسوب (IT)')">احجز الآن</button>
+                    </div>
+                </div>
+                <!-- Course 2 -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">مقدمة في لغات البرمجة</h3>
+                        <p class="card-desc">دورة مبسطة للمبتدئين للتعرف على عالم البرمجة وكيفية كتابة الأكواد الأساسية.
+                        </p>
+                        <span class="price">السعر: 800 ج.م</span>
+                        <button class="btn" onclick="bookCourse('مقدمة في لغات البرمجة')">احجز الآن</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Booking Section -->
+    <section id="booking">
+        <div class="container">
+            <h2 class="section-title">حجز استشارات تقنية</h2>
+
+            <div class="booking-form">
+                <div id="booking-success" class="success-message">
+                    تم إرسال طلب الحجز بنجاح! سنتواصل معك قريباً.
+                </div>
+
+                <form id="consultation-form" novalidate>
+                    <div class="form-group">
+                        <label for="name">الاسم (رباعي)</label>
+                        <input type="text" id="name" class="form-control" placeholder="أدخل اسمك الكامل">
+                        <span class="error-message" id="name-error">يرجى إدخال الاسم الكامل</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" class="form-control" placeholder="example@email.com">
+                        <span class="error-message" id="email-error">يرجى إدخال بريد إلكتروني صحيح</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="أدخل رقم هاتفك">
+                        <span class="error-message" id="phone-error">يرجى إدخال رقم هاتف صحيح</span>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">إحجز الاستشارة
+                        الآن</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="courses-section">
+        <div class="container">
+            <h2 class="section-title">لماذا قناة شرح الحاسب؟</h2>
+            <div class="grid-container">
+                <!-- Feature 1 -->
+                <div class="card"
+                    style="text-align: center; justify-content: flex-start; align-items: center; padding: 40px 20px;">
+                    <i class="fas fa-laptop-code"
+                        style="font-size: 3.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                    <h3 class="card-title" style="margin-bottom: 15px;">شرح عملي ومُيسر</h3>
+                    <p class="card-desc" style="flex-grow: 0;">تبسيط المفاهيم التقنية المعقدة بالتدريب العملي لضمان
+                        الفهم
+                        السريع والعميق لجميع المستويات.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="card"
+                    style="text-align: center; justify-content: flex-start; align-items: center; padding: 40px 20px;">
+                    <i class="fas fa-network-wired"
+                        style="font-size: 3.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                    <h3 class="card-title" style="margin-bottom: 15px;">تأسيس تقني قوي</h3>
+                    <p class="card-desc" style="flex-grow: 0;">بناء أساس برمجي وتقني متين يضمن لك مسايرة تطورات
+                        التكنولوجيا
+                        في جميع المراحل القادمة.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="card"
+                    style="text-align: center; justify-content: flex-start; align-items: center; padding: 40px 20px;">
+                    <i class="fas fa-clock"
+                        style="font-size: 3.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                    <h3 class="card-title" style="margin-bottom: 15px;">توفير الوقت والجهد</h3>
+                    <p class="card-desc" style="flex-grow: 0;">فيديوهات هادفة تركز على أهم المسائل وطرق الحل المباشرة
+                        والذكية بدون أي حشو أو تشتيت.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>أ. شهد خالد</h3>
+            <p>جميع الحقوق محفوظة &copy; 2024 - شهد خالد</p>
+            <div class="footer-socials">
+                <a href="https://www.youtube.com/channel/UCyUUeLxp4X_Fc7f0VzUDvdQ" target="_blank" title="قناة يوتيوب">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    
+    <!-- React & Babel Library -->
+     <!--
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>-->
+            
+
+    <!-- React Components -->
+    <script type="text/babel">
+        // Lessons Data
+        const lessonsData = [
+            {
+                title: "مقدمة في الحاسب الآلي",
+                desc: "شرح مبسط لمكونات الحاسب الآلي (Hardware & Software).",
+                img: "it.png",
+                link: "http://youtube.com/post/UgkxfnU6vtP9QfBy9qJxePw6Q8e_KdJhJu6u?si=QYfhje9swl2ongNO"
+            },
+            {
+                title: "أساسيات نظام ويندوز",
+                desc: "تعرف على كيفية استخدام نظام التشغيل ويندوز وإدارة الملفات.",
+                img: "windos.png",
+                link: "http://youtube.com/post/UgkxnP1bxH23zZ-SZNf6kV2RxBBsNDRaCaSh?si=Zh2BSpJSCrfcD4Gw"
+            },
+            {
+                title: "مقدمة في الإنترنت",
+                desc: "أساسيات استخدام متصفحات الويب والبحث الآمن على الإنترنت.",
+                img: "internet.png",
+                link: "http://youtube.com/post/UgkxQ3TpHNNiSe0tsnGPUkbWt_9Jig8anXh2?si=Zy1oPfvY_dwGS3Ol"
+            }
+        ];
+
+        // Card Component
+        function LessonCard({ lesson }) {
+            return (
+                <div className="card">
+                    <img src={lesson.img} alt="صورة الدرس" className="card-img" />
+                    <div className="card-content">
+                        <h3 className="card-title">{lesson.title}</h3>
+                        <p className="card-desc">{lesson.desc}</p>
+                        <a href={lesson.link} target="_blank" className="btn">شاهد الدرس</a>
+                    </div>
+                </div>
+            );
+        }
+
+        // List Component
+        function LessonsList() {
+            return (
+                <div className="grid-container">
+                    {lessonsData.map((lesson, index) => (
+                        <LessonCard key={index} lesson={lesson} />
+                    ))}
+                </div>
+            );
+        }
+
+        // Render Component
+        const container = document.getElementById('react-lessons-root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<LessonsList />);
+    </script>
+
+    <!-- JavaScript -->
+    <script>
+        // Theme Toggle (Dark/Light Mode)
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+
+        // Apply saved theme
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link (mobile)
+        document.querySelectorAll('.nav-links li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Course Booking Alert
+        function bookCourse(courseName) {
+            alert(`شكراً لاهتمامك بـ "${courseName}". سيتم تحويلك لصفحة الدفع قريباً.`);
+        }
+
+        // Form Validation & Submission
+        const form = document.getElementById('consultation-form');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            // Error elements
+            const nameError = document.getElementById('name-error');
+            const emailError = document.getElementById('email-error');
+            const phoneError = document.getElementById('phone-error');
+
+            let isValid = true;
+
+            // Validate Name
+            if (name === '' || name.split(' ').length < 2) {
+                nameError.style.display = 'block';
+                isValid = false;
+            } else {
+                nameError.style.display = 'none';
+            }
+
+            // Validate Email (simple regex)
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                emailError.style.display = 'block';
+                isValid = false;
+            } else {
+                emailError.style.display = 'none';
+            }
+
+            // Validate Phone
+            if (phone === '' || phone.length < 8) {
+                phoneError.style.display = 'block';
+                isValid = false;
+            } else {
+                phoneError.style.display = 'none';
+            }
+
+            // Success
+            if (isValid) {
+                // Hide form, show success
+                form.style.display = 'none';
+                const successMsg = document.getElementById('booking-success');
+                successMsg.style.display = 'block';
+
+                // Reset form after few seconds and show it back
+                setTimeout(() => {
+                    form.reset();
+                    form.style.display = 'block';
+                    successMsg.style.display = 'none';
+                }, 5000);
+            }
+        });
+        </script>
+         <!-- React & Babel Library -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    
+</body>
+
+</html>
